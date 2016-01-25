@@ -75,7 +75,6 @@
         <!--LoginVC-->
         <scene sceneID="YK3-06-eM7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fp1-nr-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="CYs-Fy-phs" customClass="loginVC" customModule="BarHoppr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EWm-C5-Vte"/>
@@ -97,6 +96,7 @@
                         <outlet property="loginButton" destination="jJT-Pw-YKc" id="yfx-54-0CO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fp1-nr-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="-715"/>
         </scene>
@@ -109,7 +109,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fRg-PY-4DE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4hj-OD-MDq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8iG-yZ-Bin">
@@ -119,13 +119,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LmZ-AF-oYu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="theMap" destination="8iG-yZ-Bin" id="1dy-fV-cWz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUE-9y-e17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-728"/>
+            <point key="canvasLocation" x="860" y="-715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
