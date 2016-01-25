@@ -27,6 +27,7 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
         {
             print("user Logged in")
         }
+        
         loginButton.delegate = self
         loginButton.readPermissions = ["public_profile","email","user_friends"]
         
@@ -45,13 +46,31 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
         {
             let token:FBSDKAccessToken = result.token
             
+            
+            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "devices"]);
+            fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+                
+                if error == nil {
+                    
+                    print("Friends are : \(result)")
+                    
+                } else {
+                    
+                    print("Error Getting Friends \(error)");
+                    
+                }
+            }
+            
+            
+            let newScreen:loginVC = loginVC()
+            self.presentViewController(newScreen, animated: true, completion: nil)
         }
         
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
-        
+        print("logged out")
     }
 
 
