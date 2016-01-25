@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0390301D1C55AB150000A164 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390301A1C55AB150000A164 /* FBSDKCoreKit.framework */; };
+		0390301E1C55AB150000A164 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390301B1C55AB150000A164 /* FBSDKLoginKit.framework */; };
+		0390301F1C55AB150000A164 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390301C1C55AB150000A164 /* FBSDKShareKit.framework */; };
 		4D160BDE1C55750E0037716F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D160BDD1C55750E0037716F /* AppDelegate.swift */; };
 		4D160BE01C55750E0037716F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D160BDF1C55750E0037716F /* MasterViewController.swift */; };
 		4D160BE21C55750E0037716F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D160BE11C55750E0037716F /* DetailViewController.swift */; };
@@ -18,10 +21,6 @@
 		4D160C0E1C5577D70037716F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D160C0D1C5577D70037716F /* MainVC.swift */; };
 		4D160C121C557DC90037716F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D160C111C557DC90037716F /* CoreLocation.framework */; };
 		4D3C7C761C5584FA00901FFC /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C7C751C5584FA00901FFC /* loginVC.swift */; };
-		4D3C7C781C55859700901FFC /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3C7C771C55859700901FFC /* login.png */; };
-		4D3C7C7C1C558A9600901FFC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3C7C791C558A9600901FFC /* FBSDKCoreKit.framework */; };
-		4D3C7C7D1C558A9600901FFC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3C7C7A1C558A9600901FFC /* FBSDKLoginKit.framework */; };
-		4D3C7C7E1C558A9600901FFC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3C7C7B1C558A9600901FFC /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0390301A1C55AB150000A164 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		0390301B1C55AB150000A164 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		0390301C1C55AB150000A164 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		4D160BDA1C55750E0037716F /* BarHoppr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarHoppr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D160BDD1C55750E0037716F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D160BDF1C55750E0037716F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -59,10 +61,6 @@
 		4D160C0D1C5577D70037716F /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		4D160C111C557DC90037716F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4D3C7C751C5584FA00901FFC /* loginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
-		4D3C7C771C55859700901FFC /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login.png; path = ../../../Downloads/login.png; sourceTree = "<group>"; };
-		4D3C7C791C558A9600901FFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		4D3C7C7A1C558A9600901FFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		4D3C7C7B1C558A9600901FFC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D3C7C7E1C558A9600901FFC /* FBSDKShareKit.framework in Frameworks */,
+				0390301F1C55AB150000A164 /* FBSDKShareKit.framework in Frameworks */,
 				4D160C121C557DC90037716F /* CoreLocation.framework in Frameworks */,
-				4D3C7C7C1C558A9600901FFC /* FBSDKCoreKit.framework in Frameworks */,
-				4D3C7C7D1C558A9600901FFC /* FBSDKLoginKit.framework in Frameworks */,
+				0390301D1C55AB150000A164 /* FBSDKCoreKit.framework in Frameworks */,
+				0390301E1C55AB150000A164 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,14 +95,14 @@
 		4D160BD11C55750E0037716F = {
 			isa = PBXGroup;
 			children = (
+				0390301A1C55AB150000A164 /* FBSDKCoreKit.framework */,
+				0390301B1C55AB150000A164 /* FBSDKLoginKit.framework */,
+				0390301C1C55AB150000A164 /* FBSDKShareKit.framework */,
 				4D160C111C557DC90037716F /* CoreLocation.framework */,
 				4D160BDC1C55750E0037716F /* BarHoppr */,
 				4D160BF31C55750E0037716F /* BarHopprTests */,
 				4D160BFE1C55750E0037716F /* BarHopprUITests */,
 				4D160BDB1C55750E0037716F /* Products */,
-				4D3C7C791C558A9600901FFC /* FBSDKCoreKit.framework */,
-				4D3C7C7A1C558A9600901FFC /* FBSDKLoginKit.framework */,
-				4D3C7C7B1C558A9600901FFC /* FBSDKShareKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,7 +128,6 @@
 				4D160BEB1C55750E0037716F /* Info.plist */,
 				4D160C0D1C5577D70037716F /* MainVC.swift */,
 				4D3C7C751C5584FA00901FFC /* loginVC.swift */,
-				4D3C7C771C55859700901FFC /* login.png */,
 			);
 			path = BarHoppr;
 			sourceTree = "<group>";
@@ -221,6 +218,7 @@
 				TargetAttributes = {
 					4D160BD91C55750E0037716F = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6H72VGJQK7;
 					};
 					4D160BEF1C55750E0037716F = {
 						CreatedOnToolsVersion = 7.2;
@@ -258,7 +256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D160BEA1C55750E0037716F /* LaunchScreen.storyboard in Resources */,
-				4D3C7C781C55859700901FFC /* login.png in Resources */,
 				4D160BE71C55750E0037716F /* Assets.xcassets in Resources */,
 				4D160BE51C55750E0037716F /* Main.storyboard in Resources */,
 			);
@@ -431,14 +428,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BarHoppr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CD.BarHoppr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CD.BarHoppr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -446,14 +447,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BarHoppr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CD.BarHoppr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CD.BarHoppr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
