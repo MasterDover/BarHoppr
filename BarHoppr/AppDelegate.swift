@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Parse
+import Bolts
 
 
 
@@ -21,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("spAs98YsDZqcciDiL28B297mcoTIB48lWEcJCfDl",
+            clientKey: "FCgZmLWXEfbTMiCIQPDoEimlP620aLSEm53e6g3A")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         FBSDKLoginButton.classForCoder()
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
