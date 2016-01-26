@@ -47,7 +47,7 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
             let token:FBSDKAccessToken = result.token
             
             
-            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "devices"]);
+            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "email, name"]);
             fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
                 
                 if error == nil {
@@ -72,6 +72,5 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
     {
         print("logged out")
     }
-
 
 }
