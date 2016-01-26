@@ -10,6 +10,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Parse
 
 
 class loginVC: UIViewController, FBSDKLoginButtonDelegate {
@@ -47,13 +48,13 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
             let token:FBSDKAccessToken = result.token
             
             
-            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "email, name"]);
+            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "email"]);
             fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
                 
                 if error == nil {
-                    
-                    print("Friends are : \(result)")
-                    
+                
+                    print("Friends are : \(result.valueForKey("email")!)")
+                
                 } else {
                     
                     print("Error Getting Friends \(error)");
@@ -62,8 +63,8 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
             }
             
             
-            let newScreen:loginVC = loginVC()
-            self.presentViewController(newScreen, animated: true, completion: nil)
+            //let newScreen:loginVC = loginVC()
+            //self.presentViewController(newScreen, animated: true, completion: nil)
         }
         
     }

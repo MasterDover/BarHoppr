@@ -36,6 +36,9 @@
 		502160F31C57E5EE00917F0C /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502160ED1C57E5EE00917F0C /* ParseFacebookUtilsV4.framework */; };
 		502160F41C57E5EE00917F0C /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502160EE1C57E5EE00917F0C /* ParseTwitterUtils.framework */; };
 		502160F51C57E5EE00917F0C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502160EF1C57E5EE00917F0C /* ParseUI.framework */; };
+		502160FA1C57F87600917F0C /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502160F91C57F87600917F0C /* userProfile.swift */; };
+		502160FC1C57F90500917F0C /* userFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502160FB1C57F90500917F0C /* userFriends.swift */; };
+		502160FE1C57F95900917F0C /* bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502160FD1C57F95900917F0C /* bars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		502160ED1C57E5EE00917F0C /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		502160EE1C57E5EE00917F0C /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		502160EF1C57E5EE00917F0C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		502160F91C57F87600917F0C /* userProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
+		502160FB1C57F90500917F0C /* userFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userFriends.swift; sourceTree = "<group>"; };
+		502160FD1C57F95900917F0C /* bars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,9 @@
 				4D160BEB1C55750E0037716F /* Info.plist */,
 				4D160C0D1C5577D70037716F /* MainVC.swift */,
 				4D3C7C751C5584FA00901FFC /* loginVC.swift */,
+				502160F91C57F87600917F0C /* userProfile.swift */,
+				502160FB1C57F90500917F0C /* userFriends.swift */,
+				502160FD1C57F95900917F0C /* bars.swift */,
 			);
 			path = BarHoppr;
 			sourceTree = "<group>";
@@ -350,9 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502160FA1C57F87600917F0C /* userProfile.swift in Sources */,
 				4D160BE21C55750E0037716F /* DetailViewController.swift in Sources */,
 				4D3C7C761C5584FA00901FFC /* loginVC.swift in Sources */,
+				502160FC1C57F90500917F0C /* userFriends.swift in Sources */,
 				4D160C0E1C5577D70037716F /* MainVC.swift in Sources */,
+				502160FE1C57F95900917F0C /* bars.swift in Sources */,
 				4D160BE01C55750E0037716F /* MasterViewController.swift in Sources */,
 				4D160BDE1C55750E0037716F /* AppDelegate.swift in Sources */,
 			);
@@ -496,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -508,6 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CD.BarHoppr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -515,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
