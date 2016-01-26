@@ -75,7 +75,7 @@
         <!--LoginVC-->
         <scene sceneID="YK3-06-eM7">
             <objects>
-                <viewController id="CYs-Fy-phs" customClass="loginVC" customModule="BarHoppr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="CYs-Fy-phs" customClass="loginVC" customModule="BarHoppr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EWm-C5-Vte"/>
                         <viewControllerLayoutGuide type="bottom" id="iiN-2h-mev"/>
@@ -103,7 +103,7 @@
         <!--MainVC-->
         <scene sceneID="NLt-oO-dyA">
             <objects>
-                <viewController id="z0Y-Af-Wgb" customClass="MainVC" customModule="BarHoppr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="z0Y-Af-Wgb" customClass="MainVC" customModule="BarHoppr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pyb-V2-Ebb"/>
                         <viewControllerLayoutGuide type="bottom" id="fRg-PY-4DE"/>

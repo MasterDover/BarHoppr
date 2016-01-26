@@ -30,7 +30,7 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
         }
         
         loginButton.delegate = self
-        loginButton.readPermissions = ["public_profile","email","user_friends"]
+        loginButton.readPermissions = ["public_profile","email","user_friends","user_birthday"]
         
 
         // Do any additional setup after loading the view.
@@ -43,28 +43,38 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
+        var InfoList = [AnyObject]()
+        
         if let userToken = result.token
         {
             let token:FBSDKAccessToken = result.token
             
             
-            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "email"]);
+            let fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "email, id, first_name, last_name, name, friends, birthday"]);
             fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
                 
                 if error == nil {
-                
-                    print("Friends are : \(result.valueForKey("email")!)")
+                    
+                    InfoList.append(result.valueForKey("email")!)
+                    InfoList.append(result.valueForKey("id")!)
+                    InfoList.append(result.valueForKey("first_name")!)
+                    InfoList.append(result.valueForKey("last_name")!)
+                    InfoList.append(result.valueForKey("name")!)
+                    InfoList.append(result.valueForKey("birthday")!)
+                    
+                    var test = result.valueForKey("friends") as! NSDictionary
+                    var friendArray = test.valueForKey("data") as! [NSDictionary]
+                    
+                    InfoList.append(friendArray)
                 
                 } else {
                     
-                    print("Error Getting Friends \(error)");
-                    
+                    print("Error Getting Info \(error)");
                 }
             }
-            
-            
-            //let newScreen:loginVC = loginVC()
-            //self.presentViewController(newScreen, animated: true, completion: nil)
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MainVC") as UIViewController
+            self.presentViewController(vc, animated: true, completion: nil)
         }
         
     }
