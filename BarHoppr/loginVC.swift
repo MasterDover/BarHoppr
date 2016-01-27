@@ -74,7 +74,8 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
                     query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
                         
                         if error == nil {
-                                if objects == nil
+                            
+                                if objects!.isEmpty
                                 {
                                     var profile = PFObject(className: "AppUsers")
                                     profile.setObject(InfoList[0], forKey: "email")
@@ -95,7 +96,6 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
                                             // There was a problem, check error.description
                                         }
                                     }
-
                                     
                                 } else {
                                     var query2 = PFQuery(className: "AppUsers")
@@ -129,6 +129,7 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
                             }
                         }
                     
+                    
                     var picURL = NSURL(string: InfoList[7].valueForKey("data")!.valueForKey("url") as! String)
                     let data = NSData(contentsOfURL: picURL!)
                     self.profileImage.image = UIImage(data: data!)
@@ -144,12 +145,14 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
             
             
             
+            
+            
             let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MainVC") as UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
+            
 
         }
-        
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
