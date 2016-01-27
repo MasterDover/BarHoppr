@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Parse
 
 class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
@@ -28,7 +29,24 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
         locationManager.startUpdatingLocation()
         
     
-        
+        let query = PFQuery(className: "Bars")
+        query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                let objects = objects
+                for object in objects!
+                {
+                    var barLocation = object.valueForKey("barLocation") as! PFGeoPoint
+                    print(barLocation)
+                    
+                    var pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(barLocation.latitude, barLocation.longitude)
+                    var objectAnnotation = MKPointAnnotation()
+                    objectAnnotation.coordinate = pinLocation
+                    objectAnnotation.title = object.valueForKey("barName") as! String
+                    self.theMap.addAnnotation(objectAnnotation)
+                }
+            }
+        }
         
     }
 
@@ -46,10 +64,15 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
         let longDelta : CLLocationDegrees = 0.03
         let span : MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
         
-        
         let region : MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         theMap.setRegion(region, animated: true)
 
+        
+        
+        
+        
+        
+        
         
     }
     
