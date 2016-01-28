@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
+import Parse
 
 class userProfile: NSObject {
     
     static var username = ""
     static var email = ""
-    static var friendList = []
-    static var location = ""
+    static var fname = ""
+    static var lname = ""
+    static var fullName = ""
+    static var birthday = ""
+    static var friendList = [NSDictionary]()
+    static var location = PFGeoPoint()
+    static var userID = ""
     
 
 }

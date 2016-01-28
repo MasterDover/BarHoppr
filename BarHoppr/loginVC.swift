@@ -63,12 +63,24 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
                     InfoList.append(result.valueForKey("name")!)
                     InfoList.append(result.valueForKey("birthday")!)
                     
+                    
+                    
+                    
                     var test = result.valueForKey("friends") as! NSDictionary
                     var friendArray = test.valueForKey("data") as! [NSDictionary]
                     
                     InfoList.append(friendArray)
                     InfoList.append(result.valueForKey("picture")!)
                     print(InfoList)
+                    userProfile.email = InfoList[0] as! String
+                    userProfile.userID = InfoList[1] as! String
+                    userProfile.fname = InfoList[2] as! String
+                    userProfile.lname = InfoList[3] as! String
+                    userProfile.fullName = InfoList[4] as! String
+                    userProfile.birthday = InfoList[5] as! String
+                    userProfile.friendList = InfoList[6] as! [NSDictionary]
+                    
+                    
                     var query = PFQuery(className: "AppUsers")
                     query.whereKey("userID", equalTo: InfoList[1])
                     query.findObjectsInBackgroundWithBlock{ (objects: [PFObject]?, error: NSError?) -> Void in
@@ -77,6 +89,8 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
                             
                                 if objects!.isEmpty
                                 {
+                                    
+                                    
                                     var profile = PFObject(className: "AppUsers")
                                     profile.setObject(InfoList[0], forKey: "email")
                                     profile.setObject(InfoList[2], forKey: "fname")
@@ -95,6 +109,7 @@ class loginVC: UIViewController, FBSDKLoginButtonDelegate {
                                         } else {
                                             // There was a problem, check error.description
                                         }
+                                        
                                     }
                                     
                                 } else {

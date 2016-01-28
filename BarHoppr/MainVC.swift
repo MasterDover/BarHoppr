@@ -15,6 +15,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     
     @IBOutlet weak var theMap: MKMapView!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -54,7 +55,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(locations)
         
-        let currentLocation : CLLocation = locations[0] as! CLLocation
+        let currentLocation : CLLocation = locations[0]
         
         let long = currentLocation.coordinate.longitude
         let lat = currentLocation.coordinate.latitude
@@ -67,12 +68,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
         let region : MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         theMap.setRegion(region, animated: true)
 
-        
-        
-        
-        
-        
-        
+        userProfile.location = PFGeoPoint(latitude: lat, longitude: long)
         
     }
     
@@ -80,6 +76,23 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func checkIn(sender: AnyObject) {
+        print("MY LOCATION: \(userProfile.location)")
+        print("MY ID: \(userProfile.userID)")
+
+        
+        var queryBars = PFQuery(className: "Bars")
+            queryBars.whereKey("location", nearGeoPoint: userProfile.location, withinMiles: 1.0)
+            queryBars.limit = 10
+            do{
+                var bars = try queryBars.findObjects()
+                print("Closest Bar \(bars)")
+            } catch {
+                return
+            }
+    }
+    
     
 
     /*
